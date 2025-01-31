@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine?</title>
+    <title>Valentines Day - 2025</title>
     <style>
         body {
             text-align: center;
             font-family: Arial, sans-serif;
             background-color: #ffe6e6;
             overflow: hidden;
+            user-select: none;
         }
         #card {
             position: relative;
@@ -76,6 +77,8 @@
         /* CSS to remove hover effect from Tenor GIF */
         .tenor-gif-embed {
             pointer-events: none; /* Disable interactions */
+            transform: scaleY(1.5); /* Adjuast scaling to make it a bit more cursed */
+            transform-origin: center;
         }
 
         .tenor-gif-embed:hover .tenor-gif-logo {
@@ -87,7 +90,11 @@
 
     <h1 class="top_text">Scratch to reveal your surprise!</h1>
     <div id="card">
-        <img id="hidden-image" src="/cat_w_flowers.png" alt="Valentine Surprise">
+        <div class="tenor-gif-embed" data-postid="2795368028256097883" data-share-method="host" data-aspect-ratio="1.02459" data-width="100%">
+            <a href="https://tenor.com/view/cat-cat-love-gif-2795368028256097883">Cat Cat Love Meme</a>from 
+            <a href="https://tenor.com/search/cat-memes">Cat Memes</a>
+        </div> 
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
         <canvas id="scratch-pad"></canvas>
     </div>
 
@@ -142,7 +149,7 @@
 
             // Show next stage after 90% of card has been scrached off
             const clearPercentage = (clearPixels / (canvas.width * canvas.height)) * 100;
-            if (clearPercentage > 50) {
+            if (clearPercentage > 90) {
                 buttons.style.display = "block";
                 canvas.style.pointerEvents = "none";
             }
